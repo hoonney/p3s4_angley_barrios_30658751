@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editando</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+
+    <form action="/edit/" method="post">
+        <input type="hidden" value="<%= producto.id %>" name="id">
+
+        <label for="codigo">Código</label>
+        <input type="text" name="codigo" value="<%= producto.codigo %>"
+        placeholder="Código del Producto" required>
+
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" value="<%= producto.nombre %>"
+        placeholder="Nombre del Producto" required>
+
+        <label for="descripcion">Descripción</label>
+        <textarea name="descripcion" 
+        placeholder="Descripción del Producto" required><%= producto.descripcion %></textarea>
+
+        <label for="precio">Precio</label>
+        <input type="number" name="precio" value="<%= producto.precio %>"
+        placeholder="Precio del Producto" required>
+        
+        <label for="category_id">Categoría</label>
+        <select name="category_id" required>
+            <option value="1">Desayunos</option>
+            <option value="2">Almuerzos</option>
+            <option value="3">Cenas</option>
+        </select>
+        <input type="submit" value="Editar">
+
+
+    </form>
+
+</body>
+</html>
